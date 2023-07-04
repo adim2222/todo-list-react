@@ -1,0 +1,46 @@
+ul {
+    background-color: white;
+    list-style-type: none;
+    margin: 0px;
+    padding: 20px;
+}
+
+.task__done {
+    text-decoration: line-through;
+}
+
+.task__hidden {
+    display: none;
+}
+
+li {
+    border-bottom: 2px solid black;
+}
+
+.delete {
+    background-color: red;
+    color: white;
+    transition: 0.3s;
+    order: 1;
+}
+
+.task__button {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+}
+
+.done {
+    background-color: lime;
+    transition: 0.3s;
+    order: -1;
+}
+
+.list--item {
+    color: black;
+    font-size: 32px;
+    background-color: white;
+    padding: 6px;
+    display: flex;
+    justify-content: space-between;
+}
