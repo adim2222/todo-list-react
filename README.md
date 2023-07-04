@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# adim's simple task list
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
