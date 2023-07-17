@@ -20,8 +20,13 @@ li {
 .delete {
     background-color: red;
     color: white;
+    margin-left: auto;
     transition: 0.3s;
-    order: 1;
+    order: 4;
+}
+
+.delete:hover {
+    background-color: crimson;
 }
 
 .task__button {
@@ -32,8 +37,13 @@ li {
 
 .done {
     background-color: lime;
+    margin-right: 10px;
     transition: 0.3s;
     order: -1;
+}
+
+.done:hover {
+    background-color: green;
 }
 
 .list--item {
@@ -42,5 +52,5 @@ li {
     background-color: white;
     padding: 6px;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
 }

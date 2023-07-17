@@ -1,13 +1,14 @@
 import Header from "./Header";
+import List from "./List";
 import Form from "./Form";
-import List from "./List"
+import Section from "./Section";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Form />
-      <List />
+      <Section content={<Form />} header={"Dodaj nowe zadanie:"}/>
+      <Section content={<List />} header={""}/>
     </div>
   );
 }

@@ -1,7 +1,8 @@
 import React from "react";
-import "./style.css"
+import "./style.css";
 
-import Tasks from "../Tasks"
+import Tasks from "../Tasks";
+import Buttons from "../Buttons";
 
 const tasks = [
     {id: 1, content: "asdf", done: false},
@@ -13,7 +14,7 @@ const hideDoneTasks = false;
 
 const List = () => (
     <div className="main">
-        <div className="js-buttons-div function__buttons"></div>
+        <Buttons tasks={tasks} hideDoneTasks={hideDoneTasks}/>
         <Tasks tasks={tasks} hideDoneTasks={hideDoneTasks}/>
     </div>
 );

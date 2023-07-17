@@ -1,5 +1,18 @@
 # adim's simple task list
 
+## Technologies Used:
+- React Native
+- javaScript
+- Git
+- NodeJs
+
+## Description:
+Minimalistic program for monitoring tasks, with basic functions.
+
+![Image of the app](https://media.discordapp.net/attachments/1103684691258781696/1112331938368327720/image.png?width=589&height=494)
+
+## Try it out: https://adim2222.github.io/todo-list-react/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
