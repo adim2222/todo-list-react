@@ -10,12 +10,12 @@ const tasks = [
     {id: 3, content: "asgfdsggf", done: false},
 ];
   
-const hideDoneTasks = false;
+const hideDone = false;
 
 const List = () => (
     <div className="main">
-        <Buttons tasks={tasks} hideDoneTasks={hideDoneTasks}/>
-        <Tasks tasks={tasks} hideDoneTasks={hideDoneTasks}/>
+        <Buttons tasks={tasks} hideDone={hideDone}/>
+        <Tasks tasks={tasks} hideDone={hideDone}/>
     </div>
 );
 
