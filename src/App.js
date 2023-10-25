@@ -8,7 +8,7 @@ function App() {
 
   const [hideDone, setHideDone] = useState(false);
 
-  function toggleHideDone() {
+  const toggleHideDone = () => {
     setHideDone(hideDone => !hideDone);
   };
 
