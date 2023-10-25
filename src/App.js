@@ -31,11 +31,16 @@ function App() {
     }));
   };
 
+  const toggleAllDone = () => {
+    setTasks(tasks.map(task => ({...task, done: true})));
+    console.log("cock")
+  };
+
   return (
     <div className="App">
       <Header />
       <Section content={<Form />} header={"Dodaj nowe zadanie:"}/>
-      <Section content={<List toggleTaskDone={toggleTaskDone} removeTask={removeTask} hideDone={hideDone} toggleHideDone={toggleHideDone} tasks={tasks}/>} header={""}/>
+      <Section content={<List toggleAllDone={toggleAllDone} toggleTaskDone={toggleTaskDone} removeTask={removeTask} hideDone={hideDone} toggleHideDone={toggleHideDone} tasks={tasks}/>} header={""}/>
     </div>
   );
 }
