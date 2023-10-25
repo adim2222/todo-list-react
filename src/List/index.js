@@ -4,10 +4,10 @@ import "./style.css";
 import Tasks from "../Tasks";
 import Buttons from "../Buttons";
   
-const List = ({hideDone, toggleHideDone, tasks, removeTask}) => (
+const List = ({hideDone, toggleHideDone, tasks, removeTask, toggleTaskDone}) => (
     <div className="main">
         <Buttons tasks={tasks} hideDone={hideDone} toggleHideDone={toggleHideDone}/>
-        <Tasks tasks={tasks} hideDone={hideDone} removeTask={removeTask}/>
+        <Tasks tasks={tasks} hideDone={hideDone} toggleTaskDone={toggleTaskDone} removeTask={removeTask}/>
     </div>
 );
 

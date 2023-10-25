@@ -7,7 +7,7 @@ const Tasks = (props) => (
             <li className={`list--item ${(task.done && props.hideDone) ? "task__hidden" : ""}`}>
                 <span className={task.done ? "task__done" : ""}>{task.content}</span>
                 <button class="delete task__button" onClick={() => (props.removeTask(task.id))}>🗑</button>
-                <button class="done task__button">{(task.done) ? "✓" : ""}</button>
+                <button class="done task__button" onClick={() => (props.toggleTaskDone(task.id))}>{(task.done) ? "✓" : ""}</button>
             </li>
         ))}
     </ul>

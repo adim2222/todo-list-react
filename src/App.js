@@ -15,18 +15,27 @@ function App() {
 
   const removeTask = (id) => {
     setTasks(tasks => tasks.filter(task => task.id !== id));
-    console.log(tasks);
   };
 
   const toggleHideDone = () => {
     setHideDone(hideDone => !hideDone);
   };
 
+  const toggleTaskDone = (id) => {
+    setTasks(tasks => tasks.map(task => {
+      if (task.id === id) {
+        return {...task, done: !task.done};
+      };
+
+      return task;
+    }));
+  };
+
   return (
     <div className="App">
       <Header />
       <Section content={<Form />} header={"Dodaj nowe zadanie:"}/>
-      <Section content={<List removeTask={removeTask} hideDone={hideDone} toggleHideDone={toggleHideDone} tasks={tasks}/>} header={""}/>
+      <Section content={<List toggleTaskDone={toggleTaskDone} removeTask={removeTask} hideDone={hideDone} toggleHideDone={toggleHideDone} tasks={tasks}/>} header={""}/>
     </div>
   );
 }
