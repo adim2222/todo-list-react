@@ -37,13 +37,13 @@ function App() {
   };
 
   const addTask = (newTaskContent) => {
-    setTasks(tasks => [...tasks, {content: newTaskContent, done: false, id: tasks.length === 0 ? tasks[tasks.length - 1].id + 1 : 1}])
+    setTasks(tasks => [...tasks, {content: newTaskContent, done: false, id: tasks.length ? tasks[tasks.length - 1].id + 1 : 1}])
   }
 
   return (
     <div className="App">
       <Header />
-      <Section content={<Form addTask={addTask}/>} header={"Dodaj nowe zadanie:"}/>
+      <Section content={<Form addTask={addTask}/>} header={"Dodaj nowe zadanie"}/>
       <Section content={<List toggleAllDone={toggleAllDone} toggleTaskDone={toggleTaskDone} removeTask={removeTask} hideDone={hideDone} toggleHideDone={toggleHideDone} tasks={tasks}/>} header={""}/>
     </div>
   );

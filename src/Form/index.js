@@ -15,8 +15,8 @@ const Form = ({addTask}) => {
 
     return (
         <div className="input__div">
-            <input className="js-input" type="text" value={newTaskContent} onChange={(event) => setNewTaskContent(event.target.value)}/>
-            <button className="js-button add-task" onClick={onTaskAdd}>Utwórz</button>
+            <input placeholder="Co jest do zrobienia?" className="js-input" type="text" value={newTaskContent} onChange={(event) => setNewTaskContent(event.target.value)}/>
+            <button className="js-button add-task" onClick={onTaskAdd}>Dodaj zadanie</button>
         </div>
     )
 };
