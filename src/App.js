@@ -4,7 +4,7 @@ import Form from "./Form";
 import Section from "./Section";
 import { useEffect, useState } from "react";
 
-const savedTasks = JSON.parse(localStorage.getItem("tasks"));
+const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 function App() {
 
