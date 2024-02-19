@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.ade30cd2.css","mappings":"AAAA,KAGE,wBAA2B,CAF3B,sCAAyC,CACzC,QAEF","sources":["index.css"],"sourcesContent":["body {\n  font-family: Arial, Helvetica, sans-serif;\n  margin: 0px;\n  background-color: lightgray;\n}"],"names":[],"sourceRoot":""}
