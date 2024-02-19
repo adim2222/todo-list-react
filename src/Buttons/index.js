@@ -1,12 +1,12 @@
 import React from "react";
-import "./style.css";
+import {FunctionButtons, ListHeader, ButtonHide, ButtonComplete} from "./styled.js"
 
 const Buttons = ({hideDone, tasks, toggleHideDone, toggleAllDone}) => (
-    <div className="js-buttons-div function__buttons">
-        <span className="list--header">Lista zadań</span>
-        <button className="hide" onClick={toggleHideDone}>{hideDone ? "Pokaż" : "Ukryj"} Ukończone</button>
-        <button className={`complete ${tasks.every(({ done }) => done) ? "disabled" : ""}`} onClick={toggleAllDone}>Ukończ wszystkie</button>
-    </div>
+    <FunctionButtons>
+        <ListHeader>Lista zadań</ListHeader>
+        <ButtonHide onClick={toggleHideDone}>{hideDone ? "Pokaż" : "Ukryj"} Ukończone</ButtonHide>
+        <ButtonComplete disabled={tasks.every(({ done }) => done)} onClick={toggleAllDone}>Ukończ wszystkie</ButtonComplete>
+    </FunctionButtons>
 );
 
 export default Buttons;

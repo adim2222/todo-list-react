@@ -1,11 +1,11 @@
 import React from "react";
-import "./style.css"
+import { SectionDiv, FormHeader } from "./styled";
 
 const Section = ({content, header}) => (
-    <div className="section">
-        <div className={`form__header ${(header) ? "" : "hidden"}`}>{header}</div>
+    <SectionDiv>
+        <FormHeader hidden={(!header)}>{header}</FormHeader>
         {content}
-    </div>
+    </SectionDiv>
 );
 
 export default Section;

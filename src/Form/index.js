@@ -1,12 +1,14 @@
 import React from "react";
-import "./style.css";
-import { useState } from "react";
+import {InputDiv, AddTaskButton, TaskInput} from "./styled";
+import { useState, useRef } from "react";
 
 const Form = ({addTask}) => {
     
     const [newTaskContent, setNewTaskContent] = useState("");
+    const inputRef = useRef();
 
     const onTaskAdd = () => {
+        inputRef.current.focus();
         if (newTaskContent !== "") {
             addTask(newTaskContent)
             setNewTaskContent("")
@@ -14,10 +16,10 @@ const Form = ({addTask}) => {
     }
 
     return (
-        <div className="input__div">
-            <input placeholder="Co jest do zrobienia?" className="js-input" type="text" value={newTaskContent} onChange={(event) => setNewTaskContent(event.target.value)}/>
-            <button className="js-button add-task" onClick={onTaskAdd}>Dodaj zadanie</button>
-        </div>
+        <InputDiv>
+            <TaskInput ref={inputRef} placeholder="Co jest do zrobienia?" type="text" value={newTaskContent} onChange={(event) => setNewTaskContent(event.target.value)}/>
+            <AddTaskButton onClick={onTaskAdd}>Dodaj zadanie</AddTaskButton>
+        </InputDiv>
     )
 };
 

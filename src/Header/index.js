@@ -1,10 +1,10 @@
 import React from "react";
-import "./style.css"
+import { HeaderDiv } from "./styled";
 
 const Header = () => (
-    <div className="header">
+    <HeaderDiv className="header">
         <h1>Lista zadań</h1>
-    </div>
+    </HeaderDiv>
 );
 
 export default Header;
