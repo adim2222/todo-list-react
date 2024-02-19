@@ -5,7 +5,7 @@ export const FunctionButtons = styled.div`
     margin-top: 20px;
     text-align: end;
     padding: 20px;
-    border-bottom: solid 1px black;
+    border-bottom: solid 1px lightgray;
 `
 
 export const ListHeader = styled.span`

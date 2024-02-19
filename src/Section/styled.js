@@ -11,7 +11,7 @@ export const FormHeader = styled.div`
     font-weight: bold;
     font-size: 22px;
     padding: 20px;
-    border-bottom: solid 1px gray;
+    border-bottom: solid 1px lightgray;
 
     ${({hidden}) => hidden && css`
         display: none;

@@ -2,12 +2,12 @@ import styled, { css } from "styled-components";
 
 export const ListItem = styled.li`
     color: black;
-    font-size: 32px;
+    font-size: 22px;
     background-color: white;
     padding: 6px;
     display: flex;
     align-items: center;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid lightgray;
 
     ${({ hidden }) => hidden && css`
         display: none;
@@ -21,10 +21,11 @@ export const TaskName = styled.span`
 `
 
 export const TaskButton = styled.button`
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     font-size: 30px;
     color: white;
+    border: none;
 
     ${({ remove }) => remove && css`
         background-color: red;
