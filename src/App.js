@@ -3,11 +3,15 @@ import List from "./List";
 import Form from "./Form";
 import Section from "./Section";
 import { useTasks } from "./useTasks";
+import { useSelector } from "react-redux";
+import { selectTasks } from "./tasksSlice";
 
 function App() {
 
+  const { tasks } = useSelector(selectTasks);
+
   const {
-    tasks,
+    //tasks,
     hideDone,
     removeTask,
     toggleAllDone,

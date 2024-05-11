@@ -1,12 +1,19 @@
 import React from "react";
-import {FunctionButtons, ListHeader, ButtonHide, ButtonComplete} from "./styled.js"
+import { useSelector, useDispatch } from "react-redux";
+import { FunctionButtons, ListHeader, ButtonHide, ButtonComplete } from "./styled.js"
+import { selectTasks } from "../tasksSlice.js";
+import { toggleHideDone, toggleAllDone } from "../tasksSlice.js";
 
-const Buttons = ({hideDone, tasks, toggleHideDone, toggleAllDone}) => (
-    <FunctionButtons>
-        <ListHeader>Lista zadań</ListHeader>
-        <ButtonHide onClick={toggleHideDone}>{hideDone ? "Pokaż" : "Ukryj"} Ukończone</ButtonHide>
-        <ButtonComplete disabled={tasks.every(({ done }) => done)} onClick={toggleAllDone}>Ukończ wszystkie</ButtonComplete>
-    </FunctionButtons>
-);
+const Buttons = () => {
+    const {tasks , hideDone} = useSelector(selectTasks);
+    const dispatch = useDispatch();
+    return (
+        <FunctionButtons>
+            <ListHeader>Lista zadań</ListHeader>
+            <ButtonHide onClick={() => dispatch(toggleHideDone())}>{hideDone ? "Pokaż" : "Ukryj"} Ukończone</ButtonHide>
+            <ButtonComplete onClick={() => dispatch(toggleAllDone())} disabled={tasks.every(({ done }) => done)}>Ukończ wszystkie</ButtonComplete>
+        </FunctionButtons>
+    )
+};
 
 export default Buttons;
