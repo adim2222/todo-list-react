@@ -5,6 +5,8 @@
 - javaScript
 - Git
 - NodeJs
+- Styled components
+- Redux
 
 ## Description:
 Minimalistic program for monitoring tasks, with basic functions.
