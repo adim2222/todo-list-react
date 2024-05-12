@@ -24,9 +24,15 @@ const Form = () => {
         }
     }
 
+    const keyPressHandler = (e) => {
+        if (e.key === "Enter") {
+            onTaskAdd();
+        }
+    }
+
     return (
         <InputDiv>
-            <TaskInput ref={inputRef} placeholder="Co jest do zrobienia?" type="text" value={newTaskContent} onChange={(event) => setNewTaskContent(event.target.value)}/>
+            <TaskInput onKeyDown={keyPressHandler} ref={inputRef} placeholder="Co jest do zrobienia?" type="text" value={newTaskContent} onChange={(event) => setNewTaskContent(event.target.value)}/>
             <AddTaskButton onClick={onTaskAdd}>Dodaj zadanie</AddTaskButton>
         </InputDiv>
     )
