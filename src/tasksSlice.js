@@ -1,11 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { getTasksFromLocalStorage } from './tasksLocalStorage';
 
 const tasksSlice = createSlice({
   name: 'tasks',
-  initialState: {
-    tasks: [],
-    hideDone: false,
-  },
+  initialState: getTasksFromLocalStorage(),
   reducers: {
     addTask: ({tasks}, {payload}) => {
       tasks.push(payload)
@@ -25,9 +23,29 @@ const tasksSlice = createSlice({
         task.done = true;
       });
     },
+    fetchExampleTasks: () => {},
+    setTasks: (state, {payload: tasks}) => {
+      state.tasks = tasks.tasks;
+    }
   }
 })
 
-export const { addTask, removeTask, toggleHideDone, toggleAllDone, toggleTaskDone } = tasksSlice.actions
-export const selectTasks = state => state.tasks
+export const { addTask, removeTask, toggleHideDone, fetchExampleTasks, toggleAllDone, toggleTaskDone, setTasks } = tasksSlice.actions
+export const selectTasks = state => state.tasks;
+export const selectTasksByQuery = (state, query) => {
+  const tasks = selectTasks(state);
+  const hideDone = tasks.hideDone;
+  const unfilteredTasks = tasks.tasks;
+  const filteredTasks = tasks.tasks.filter(({content}) => content.includes(query));
+  if (!query || query.trim() === "") {
+    return {
+      tasks: unfilteredTasks,
+      hideDone: hideDone
+    };
+  }
+  return {
+    tasks: filteredTasks,
+    hideDone: hideDone
+  };
+}
 export default tasksSlice.reducer

@@ -1,16 +1,23 @@
-import Header from "./Header";
-import List from "./List";
-import Form from "./Form";
-import Section from "./Section";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { GlobalStyles } from "./globalStyle";
+import TasksPage from "./Routes/zadania/TasksPage";
+import AuthorPage from "./Routes/author/Author";
+import { NavigationTab, StyledLink } from "./appStyle";
 
 function App() {
   return (
     <div className="App">
-      <GlobalStyles />
-      <Header />
-      <Section content={<Form />} header={"Dodaj nowe zadanie"}/>
-      <Section content={<List />}/>
+      <BrowserRouter>
+        <GlobalStyles />
+        <NavigationTab>
+              <StyledLink to="/zadania">Zadania</StyledLink>
+              <StyledLink to="/author">O autorze</StyledLink>
+        </NavigationTab>
+        <Switch>
+          <Route path="/zadania"><TasksPage /></Route>
+          <Route path="/author"><AuthorPage /></Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
