@@ -1,7 +1,9 @@
+import Section from "../tasks/Section"
+
 const Author = () => {
     return (
         <>
-            <p>Cześć!</p>
+            <Section header={"O autorze:"} content={<p>Cześć!</p>} />
         </>
     );
 };

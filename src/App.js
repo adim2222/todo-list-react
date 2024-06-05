@@ -1,23 +1,20 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { GlobalStyles } from "./globalStyle";
-import TasksPage from "./Routes/zadania/TasksPage";
+import TasksPage from "./Routes/tasks/TasksPage";
 import AuthorPage from "./Routes/author/Author";
-import { NavigationTab, StyledLink } from "./appStyle";
+import Navigation from "./Navigation";
+import { HashRouter, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <GlobalStyles />
-        <NavigationTab>
-              <StyledLink to="/zadania">Zadania</StyledLink>
-              <StyledLink to="/author">O autorze</StyledLink>
-        </NavigationTab>
+        <Navigation />
         <Switch>
-          <Route path="/zadania"><TasksPage /></Route>
+          <Route path="/tasks"><TasksPage /></Route>
           <Route path="/author"><AuthorPage /></Route>
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }

@@ -6,7 +6,6 @@ import { removeTask, toggleTaskDone } from "../../../tasksSlice";
 import { useLocation } from "react-router-dom"
 
 const Tasks = () => {
-
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const query = searchParams.get("szukaj");
