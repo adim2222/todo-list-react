@@ -4,7 +4,7 @@ import Form from "./Form";
 import Search from "./Search";
 import Section from "./Section";
 import { useDispatch } from "react-redux";
-import { fetchExampleTasks } from "../../tasksSlice";
+import { fetchExampleTasks } from "./tasksSlice";
 import { DownloadButton } from "./styled";
 
 function Tasks() {

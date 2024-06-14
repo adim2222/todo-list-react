@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { List, ListItem, TaskName, TaskButton } from "./styled";
-import { selectTasksByQuery } from "../../../tasksSlice";
-import { removeTask, toggleTaskDone } from "../../../tasksSlice";
+import { selectTasksByQuery } from "../tasksSlice";
+import { removeTask, toggleTaskDone } from "../tasksSlice";
 import { useLocation } from "react-router-dom"
 
 const Tasks = () => {
