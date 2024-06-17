@@ -3,15 +3,13 @@ import { getTasksFromLocalStorage } from '../../tasksLocalStorage';
 
 const tasksSlice = createSlice({
   name: 'tasks',
-  initialState: {
-    tasks: getTasksFromLocalStorage()
-  },
+  initialState: getTasksFromLocalStorage(),
   reducers: {
     addTask: ({tasks}, {payload}) => {
       tasks.push(payload)
     },
-    removeTask: ({tasks}, {index}) => {
-      tasks.splice(index, 1);
+    removeTask: ({tasks}, action) => {
+      tasks.splice(tasks.findIndex((task) => task.id === action.payload), 1);
     },
     toggleTaskDone: ({tasks}, action) => {
       const index = tasks.findIndex(task => task.id === action.payload);
@@ -33,7 +31,7 @@ const tasksSlice = createSlice({
 })
 
 export const { addTask, removeTask, toggleHideDone, fetchExampleTasks, toggleAllDone, toggleTaskDone, setTasks } = tasksSlice.actions
-export const selectTasks = state => state.tasks.tasks;
+export const selectTasks = state => state.tasks;
 export const selectTasksByQuery = (state, query) => {
   const tasks = selectTasks(state);
   const hideDone = tasks.hideDone;
