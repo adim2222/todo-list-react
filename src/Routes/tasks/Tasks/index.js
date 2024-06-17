@@ -16,7 +16,7 @@ const Tasks = () => {
         <List>
             {tasks.map(task => (
                 <ListItem hidden={task.done && hideDone}>
-                    <TaskName done={task.done}>{task.content} {task.id}</TaskName>
+                    <TaskName done={task.done}>{task.content}</TaskName>
                     <TaskButton remove onClick={() => (dispatch(removeTask(task.id)))}>🗑</TaskButton>
                     <TaskButton done onClick={() => (dispatch(toggleTaskDone(task.id)))}>{(task.done) ? "✓" : ""}</TaskButton>
                 </ListItem>
