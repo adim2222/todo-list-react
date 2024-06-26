@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import styled, { css } from "styled-components";
 
 export const ListItem = styled.li`
@@ -14,7 +15,9 @@ export const ListItem = styled.li`
     `}
 `
 
-export const TaskName = styled.span`
+export const TaskName = styled(Link)`
+    text-decoration: none;
+    color: black;
     ${({ done }) => done && css`
         text-decoration: line-through;
     `}

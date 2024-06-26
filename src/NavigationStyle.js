@@ -7,12 +7,14 @@ export const NavigationTab = styled.nav`
     padding: 10px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 40px;
 `
 
 export const StyledLink = styled(Link)`
-    background-color: white;
-    color: black;
-    padding: 10px;
+    color: white;
     text-decoration: none;
+    &:hover {
+        font-weight: bold;
+    };
 `

@@ -40,4 +40,7 @@ export const ButtonComplete = styled.button`
     &:hover {
         color: black;
     }
+    &:disabled {
+        color: gray;
+    }
 `

@@ -2,7 +2,7 @@
   "name": "react-asdf",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://adim2222.github.io/todo-list-react/",
+  "homepage": "https://adim2222.github.io/todo-list-react",
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.3",
     "@testing-library/jest-dom": "^5.16.5",

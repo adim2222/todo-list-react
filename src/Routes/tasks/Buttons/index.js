@@ -4,7 +4,7 @@ import { FunctionButtons, ListHeader, ButtonHide, ButtonComplete } from "./style
 import { toggleHideDone, toggleAllDone, selectTasks } from "../tasksSlice.js";
 
 const Buttons = () => {
-    const {tasks , hideDone} = useSelector(selectTasks);
+    const {tasks, hideDone} = useSelector(selectTasks);
     const dispatch = useDispatch();
     return (
         <FunctionButtons>

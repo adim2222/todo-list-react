@@ -6,7 +6,12 @@ const tasksSlice = createSlice({
   initialState: getTasksFromLocalStorage(),
   reducers: {
     addTask: ({tasks}, {payload}) => {
-      tasks.push(payload)
+      console.log(payload)
+      if (payload.content.trim() === "") {
+        return;
+      } else {
+        tasks.push(payload);
+      }
     },
     removeTask: ({tasks}, action) => {
       tasks.splice(tasks.findIndex((task) => task.id === action.payload), 1);
@@ -48,4 +53,9 @@ export const selectTasksByQuery = (state, query) => {
     hideDone: hideDone
   };
 }
+export const selectTaskById = (state, taskId) => {
+  const select = selectTasks(state).tasks.find(({ id }) => id === taskId);
+  return select;
+}
+
 export default tasksSlice.reducer
