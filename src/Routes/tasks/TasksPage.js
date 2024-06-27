@@ -1,8 +1,8 @@
-import Header from "./Header";
+import Header from "../../common/Header";
 import List from "./List";
 import Form from "./Form";
 import Search from "./Search";
-import Section from "./Section";
+import Section from "../../common/Section";
 import { useDispatch } from "react-redux";
 import { fetchExampleTasks } from "./tasksSlice";
 import { DownloadButton } from "./styled";

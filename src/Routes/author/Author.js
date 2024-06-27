@@ -1,4 +1,4 @@
-import Section from "../tasks/Section"
+import Section from "../../common/Section"
 import { AboutMe } from "./styled";
 
 const Author = () => {
