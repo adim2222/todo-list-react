@@ -6,7 +6,7 @@ const Author = () => {
         <>
             <Section header={"O autorze:"} content={
                 <AboutMe>
-                    Cześć!
+                    Cześć! Jestem Adam aktualnie zaczynam swoją przygodę z programowaniem w technikum i piszę tą stronę na kurs YouCode.
                 </AboutMe>
             } />
         </>
